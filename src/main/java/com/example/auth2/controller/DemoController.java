@@ -3,8 +3,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/api")
+@RestController
 public class DemoController {
 
 
@@ -17,4 +19,10 @@ public class DemoController {
     public ResponseEntity<String> addItem(){
         return ResponseEntity.ok("Item persisted successfully ...");
     }
+
+    @GetMapping("/products")
+    public ResponseEntity<String> getProducts(){
+        return ResponseEntity.ok("here are the fetched products ...");
+    }
+
 }
